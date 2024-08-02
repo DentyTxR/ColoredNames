@@ -10,7 +10,7 @@ Data is saved at /EXILED/Configs/ColoredNames/data.yml
 
 OverrideBadge works as follows:
 - if the player does not have any server roles, OverrideBadge doesnt effect them. they will get a colored name.
-- if the player DOES have a server role, such as 'moderator' and OverrideBadge is set to they will not get a colored name.
+- if the player DOES have a server role, such as 'moderator' and OverrideBadge is set to false they will not get a colored name.
 - if the player DOES have a server role, and OverrideBadge is set to true, the colored name completely overrides their badge color and text, permissions are not effected.
 
 Commands
