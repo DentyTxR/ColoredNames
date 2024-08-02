@@ -7,6 +7,12 @@ namespace ColoredNames.Features
     {
         public static void AddUser(string userId, string color, bool overrideBadge)
         {
+            if (Plugin.Singleton.DatabaseHandler.cache == null)
+            {
+                Log.Debug("Cache is not initialized.");
+                return;
+            }
+
             if (Plugin.Singleton.DatabaseHandler.cache.Users.Any(u => u.UserId == userId))
                 return;
 

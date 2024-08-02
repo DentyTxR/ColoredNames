@@ -4,6 +4,7 @@ using System.Linq;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 using System;
+using MEC;
 
 namespace ColoredNames.Features
 {
@@ -34,14 +35,16 @@ namespace ColoredNames.Features
 
                 try
                 {
-                    File.WriteAllText(fullPath, "# Below is a example if you are manually writing (its also the plugin dev)");
+                    File.WriteAllText(fullPath, "# Below is an example if you are manually writing (its also the plugin dev)");
 
-                    //cache.Users.Add(new UserData("76561198972907216@steam", "red", true)); old way
-                    DatabaseMethods.AddUser("76561198972907216@steam", "red", true);
-                    SaveData();
+                    Timing.CallDelayed(1f, () =>
+                    {
+                        DatabaseMethods.AddUser("76561198972907216@steam", "red", true);
+                        SaveData();
+                    });
 
                     Log.Info("data.yml created");
-                } 
+                }
                 catch (Exception ex)
                 {
                     Log.Error($"data.yml was not created\n{ex}");
