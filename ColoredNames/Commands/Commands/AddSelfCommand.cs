@@ -50,7 +50,7 @@ namespace ColoredNames.Commands.Commands
                 return true;
             }
 
-            DatabaseMethods.AddUser(player.UserId, color, false);
+            DatabaseMethods.AddUser(player.UserId, color, true);
             response = $"{player.UserId} added to cache with color {color}";
             return true;
         }
