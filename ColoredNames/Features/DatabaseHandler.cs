@@ -35,10 +35,10 @@ namespace ColoredNames.Features
 
                 try
                 {
-                    File.WriteAllText(fullPath, "# Below is an example if you are manually writing (its also the plugin dev)");
-
                     Timing.CallDelayed(1f, () =>
                     {
+                        File.WriteAllText(fullPath, "# Below is an example if you are manually writing (its also the plugin dev)");
+
                         DatabaseMethods.AddUser("76561198972907216@steam", "red", true);
                         SaveData();
                     });
