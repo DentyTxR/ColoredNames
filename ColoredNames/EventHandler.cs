@@ -1,4 +1,5 @@
 ﻿using ColoredNames.Features;
+using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using MEC;
 using System.Linq;
@@ -19,7 +20,10 @@ namespace ColoredNames
                     {
                         ev.Player.RankColor = cachedUser.Color;
                         ev.Player.RankName = " ";
-                    }
+
+                        Log.Debug($"Successfully gave {ev.Player.Nickname} a colored name.");
+                    } else if (!ev.Player.RankName.IsEmpty() && !cachedUser.OverrideBadge) 
+                        Log.Debug($"{ev.Player.UserId} already has a rank name and does not have OverrideBadge set to true, Colored name will not be given");
                 });
             }
         }

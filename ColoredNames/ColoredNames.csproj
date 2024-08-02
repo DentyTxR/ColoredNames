@@ -99,6 +99,7 @@
     <Compile Include="Commands\Commands\AddCommand.cs" />
     <Compile Include="Commands\Commands\AddSelfCommand.cs" />
     <Compile Include="Commands\Commands\CacheCommand.cs" />
+    <Compile Include="Commands\Commands\ChangeColorCommand.cs" />
     <Compile Include="Commands\Commands\RemoveCommand.cs" />
     <Compile Include="Commands\Commands\ShowDataCommand.cs" />
     <Compile Include="Commands\ParrentCommand.cs" />

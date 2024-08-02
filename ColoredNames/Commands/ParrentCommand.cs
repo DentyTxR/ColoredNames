@@ -23,6 +23,7 @@ namespace ColoredNames.Commands
         {
             RegisterCommand(new AddSelfCommand());
             RegisterCommand(new AddCommand());
+            RegisterCommand(new ChangeColor());
             RegisterCommand(new RemoveCommand());
             RegisterCommand(new CacheCommand());
             RegisterCommand(new ShowDataCommand());

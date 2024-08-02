@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
+using System;
 
 namespace ColoredNames.Features
 {
@@ -29,47 +30,80 @@ namespace ColoredNames.Features
             string fullPath = Path.Combine(DataPath, DataFile);
             if (!File.Exists(fullPath))
             {
-                File.WriteAllText(fullPath, "# Below is a example if you are manually writing (its also the plugin dev)");
+                Log.Info("data.yml does not exist, creating...");
 
-                //cache.Users.Add(new UserData("76561198972907216@steam", "red", true)); old way
-                DatabaseMethods.AddUser("76561198972907216@steam", "red", true);
-                SaveData();
+                try
+                {
+                    File.WriteAllText(fullPath, "# Below is a example if you are manually writing (its also the plugin dev)");
 
+                    //cache.Users.Add(new UserData("76561198972907216@steam", "red", true)); old way
+                    DatabaseMethods.AddUser("76561198972907216@steam", "red", true);
+                    SaveData();
+
+                    Log.Info("data.yml created");
+                } 
+                catch (Exception ex)
+                {
+                    Log.Error($"data.yml was not created\n{ex}");
+                }
             }
         }
 
         public void SaveData()
         {
-            string yaml = new SerializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .Build()
-                .Serialize(cache);
-
-            File.WriteAllText(Path.Combine(DataPath, DataFile), yaml);
-
-            foreach (Player player in Player.List.Where(p => cache.Users.Any(u => u.UserId == p.UserId)))
+            try
             {
-                UserData cachedUser = cache.Users.First(u => u.UserId == player.UserId);
+                string yaml = new SerializerBuilder()
+                    .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                    .Build()
+                    .Serialize(cache);
 
-                if (player.RankName.IsEmpty() || cachedUser.OverrideBadge)
+                File.WriteAllText(Path.Combine(DataPath, DataFile), yaml);
+                Log.Debug($"Successfully saved data to {DataFile}.");
+
+                foreach (Player player in Player.List.Where(p => cache.Users.Any(u => u.UserId == p.UserId)))
                 {
-                    player.RankColor = cachedUser.Color;
-                    player.RankName = " ";
+                    UserData cachedUser = cache.Users.First(u => u.UserId == player.UserId);
+                    Log.Debug($"Processing player: {player.UserId} with cached color: {cachedUser.Color}");
+
+                    if (player.RankName.IsEmpty() || cachedUser.OverrideBadge)
+                    {
+                        player.RankColor = cachedUser.Color;
+                        player.RankName = " ";
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug($"Error while saving data:\n {ex.Message}");
             }
         }
 
         public void LoadData()
         {
-            string fullPath = Path.Combine(DataPath, DataFile);
-            if (File.Exists(fullPath))
+            try
             {
-                string yaml = File.ReadAllText(fullPath);
-                
-                cache = new DeserializerBuilder()
-                    .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                    .Build()
-                    .Deserialize<UserDataCollection>(yaml);
+                string fullPath = Path.Combine(DataPath, DataFile);
+                if (File.Exists(fullPath))
+                {
+                    string yaml = File.ReadAllText(fullPath);
+                    Log.Debug($"Loading data from {DataFile}.");
+
+                    cache = new DeserializerBuilder()
+                        .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                        .Build()
+                        .Deserialize<UserDataCollection>(yaml);
+
+                    Log.Debug("Data loaded successfully.");
+                }
+                else
+                {
+                    Log.Debug($"Data file {DataFile} does not exist. No data loaded.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug($"Error loading data:\n {ex.Message}");
             }
         }
 
