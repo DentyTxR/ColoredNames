@@ -1,19 +1,10 @@
-# ColoredNames
-
-### A simple plugin to allow users to have colored names, this is done by giving the player invisible rank text, Also uses a yml file as a database.
+# <div align="center">ColoredNames<br><sub> A simple plugin to allow users to have colored names with no badge text, Allow uses a database for storing data.<br>[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ColoredNames/total.svg)]()</sub></div>
 
 This is still a work in progress, I rarely do stuff related to data so the code isnt the best, Everything does work, I will make changes and additions in the future that will at least not break data.yml so user data will not be lost.
 
-[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ColoredNames/total.svg)]()
+<br>
 
-Data is saved at /EXILED/Configs/ColoredNames/data.yml
-
-OverrideBadge works as follows:
-- if the player does not have any server roles, OverrideBadge doesnt effect them. they will get a colored name.
-- if the player DOES have a server role, such as 'moderator' and OverrideBadge is set to they will not get a colored name.
-- if the player DOES have a server role, and OverrideBadge is set to true, the colored name completely overrides their badge color and text, permissions are not effected.
-
-Commands
+# <div align="center">Commands</div>
 
 | Command Name | Does | Permission |
 | --- | --- | --- |
@@ -25,3 +16,21 @@ Commands
 | .cn remove | Removes a user from the database (data.yml) | colorednames.remove |
 | .cn cache | Re-caches database if you manually modifed data.yml | colorednames.cache |
 | .cn showdata | Shows all users and data in data.yml | colorednames.showdata |
+
+<br>
+
+# <div align="center">FAQ</div>
+
+- Data is saved at `/EXILED/Configs/ColoredNames/data.yml`
+
+- OverrideBadge works as follows:
+  - if the player does not have any server roles, OverrideBadge doesnt effect them. they will get a colored name.
+  - if the player DOES have a server role, such as 'moderator' and OverrideBadge is set to false they will not get a colored name.
+  - if the player DOES have a server role, and OverrideBadge is set to true, the colored name completely overrides their badge color and text, permissions are not effected.
+
+ - If you manually modify `data.yml` you NEED to recache the plugins cache by running `.cn cache`
+
+<br>
+
+## <div align="center">If You Use A Custom Patreon/Donator System OR CEDMOD</div>
+If you use cedmod and cedmod role sync  
