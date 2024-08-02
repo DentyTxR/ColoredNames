@@ -1,6 +1,6 @@
 # <div align="center">ColoredNames<br><sub> A simple plugin to allow users to have colored names with no badge text, Allow uses a database for storing data.<br>[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ColoredNames/total.svg)]()</sub></div>
 
-## NOTE: This plugin relies on EXILED permissions! The player/group NEEDS to have `colorednames.access` otherwise the plugin will not give the user a colored name when joining the server. MAKE SURE YOU SETUP PERMISISONS CORRECTLY BECAUSE IF THEY HAVE OTHER PERMISSIONS BUT NOT `colorednames.access` THEY CAN BYPASS WHEN RUNNING ANOTHER COMMAND.
+## NOTE: This plugin relies on EXILED permissions! The player/group NEEDS to have `colorednames.access` otherwise the plugin will not give the user a colored name when joining the server and cannot access commands.
 
 <br>
 
@@ -23,15 +23,13 @@
 
 | Permission | Use |
 | --- | --- |
-| `colorednames.access` |  |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-| `colorednames.access` | test |
-
+| `colorednames.access` | Access to plugin and allows automaticlly getting colored name |
+| `colorednames.addself` | Access to `addself` command |
+| `colorednames.add` | Access to `add` command |
+| `colorednames.changecolor` | Access to `changecolor` command |
+| `colorednames.remove` | Access to `remove` command |
+| `colorednames.cache` | Access to `cache` command |
+| `colorednames.showdata` | Access to `showdata` command |
 
 
 <br>
