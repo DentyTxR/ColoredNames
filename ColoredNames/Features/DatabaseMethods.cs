@@ -69,5 +69,7 @@ namespace ColoredNames.Features
         {
             return Plugin.Singleton.DatabaseHandler.cache.Users.FirstOrDefault(user => user.UserId == userId);
         }
+
+        public static UserDataCollection GetData() => Plugin.Singleton.DatabaseHandler.cache;
     }
 }

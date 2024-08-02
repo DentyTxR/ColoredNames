@@ -1,8 +1,7 @@
-﻿using CommandSystem;
-using System;
-using Exiled.API.Features;
+﻿using ColoredNames.Commands.Commands;
+using CommandSystem;
 using Exiled.Permissions.Extensions;
-using ColoredNames.Commands.Commands;
+using System;
 
 namespace ColoredNames.Commands
 {

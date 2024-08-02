@@ -23,7 +23,8 @@ namespace ColoredNames
                         ev.Player.RankName = " ";
 
                         Log.Debug($"Successfully gave {ev.Player.Nickname} a colored name.");
-                    } else if (!ev.Player.RankName.IsEmpty() && !cachedUser.OverrideBadge) 
+                    }
+                    else if (!ev.Player.RankName.IsEmpty() && !cachedUser.OverrideBadge)
                         Log.Debug($"{ev.Player.UserId} already has a rank name and does not have OverrideBadge set to true, Colored name will not be given");
                 });
             }

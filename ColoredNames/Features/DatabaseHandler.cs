@@ -1,9 +1,9 @@
 ﻿using Exiled.API.Features;
+using System;
 using System.IO;
 using System.Linq;
-using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
-using System;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace ColoredNames.Features
 {
@@ -105,7 +105,5 @@ namespace ColoredNames.Features
                 Log.Debug($"Error loading data:\n {ex.Message}");
             }
         }
-
-        public UserDataCollection GetData() => cache;
     }
 }

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ColoredNames.Features;
 using Exiled.API.Features;
-using ColoredNames.Features;
+using System;
 using PlayerHandler = Exiled.Events.Handlers.Player;
 
 namespace ColoredNames

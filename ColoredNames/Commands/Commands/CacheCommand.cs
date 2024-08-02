@@ -1,7 +1,7 @@
 ﻿using ColoredNames.Features;
 using CommandSystem;
-using System;
 using Exiled.Permissions.Extensions;
+using System;
 
 namespace ColoredNames.Commands.Commands
 {
@@ -23,7 +23,7 @@ namespace ColoredNames.Commands.Commands
 
             DatabaseMethods.ReloadCache();
             response = "Cache was re-cached";
-            return true;;
+            return true; ;
         }
     }
 }

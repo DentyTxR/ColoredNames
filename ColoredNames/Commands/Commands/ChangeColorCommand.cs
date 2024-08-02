@@ -1,8 +1,8 @@
 ﻿using ColoredNames.Features;
 using CommandSystem;
-using System;
-using Exiled.Permissions.Extensions;
 using Exiled.API.Features;
+using Exiled.Permissions.Extensions;
+using System;
 using System.Linq;
 
 namespace ColoredNames.Commands.Commands
@@ -10,7 +10,7 @@ namespace ColoredNames.Commands.Commands
     public class ChangeColor : ICommand
     {
         public string Command { get; } = "changecolor";
-        public string[] Aliases { get; } = { "color", "cc"};
+        public string[] Aliases { get; } = { "color", "cc" };
         public string Description { get; } = "Changes your colored names color";
         public bool SanitizeResponse => false;
 
