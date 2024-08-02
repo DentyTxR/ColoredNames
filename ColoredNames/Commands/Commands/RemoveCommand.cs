@@ -30,12 +30,12 @@ namespace ColoredNames.Commands.Commands
 
             if (!DatabaseMethods.UserExists(arguments.At(0)))
             {
-                response = $"User was removed from the database, If they existed...";
+                response = $"User does not exist in the database";
                 return true;
             }
 
             DatabaseMethods.RemoveUser(arguments.At(0));
-            response = $"User was removed from the database, If they existed...";
+            response = $"User was removed from the database";
             return true;
         }
     }
