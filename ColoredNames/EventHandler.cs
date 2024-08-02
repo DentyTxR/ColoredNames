@@ -1,6 +1,7 @@
 ﻿using ColoredNames.Features;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
+using Exiled.Permissions.Extensions;
 using MEC;
 using System.Linq;
 
@@ -10,7 +11,7 @@ namespace ColoredNames
     {
         public void OnVerified(VerifiedEventArgs ev)
         {
-            if (DatabaseMethods.UserExists(ev.Player.UserId))
+            if (DatabaseMethods.UserExists(ev.Player.UserId) && ev.Player.CheckPermission("colorednames.access"))
             {
                 Timing.CallDelayed(0.5f, () =>
                 {
