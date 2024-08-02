@@ -34,7 +34,7 @@ namespace ColoredNames.Features
 
                 try
                 {
-                    File.WriteAllText(fullPath, "# Below is an example if you are manually writing (its also the plugin dev)");
+                    //File.WriteAllText(fullPath, "# Below is an example if you are manually writing (its also the plugin dev)");
 
                     cache.Users.Add(new UserData("76561198972907216@steam", "red", true));
                     SaveData();
