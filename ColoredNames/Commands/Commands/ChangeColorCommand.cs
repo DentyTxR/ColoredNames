@@ -16,7 +16,7 @@ namespace ColoredNames.Commands.Commands
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            if (!sender.CheckPermission("colorednames.changecolor"))
+            if (!sender.CheckPermission("colorednames.changecolor") && !sender.CheckPermission("colorednames.access"))
             {
                 response = OtherMethods.NoPermission("colorednames.changecolor");
                 return true;
