@@ -1,4 +1,4 @@
-# <div align="center">ColoredNames<br><sub> A simple plugin to allow users to have colored names with no badge text, Allow uses a database for storing data. Supports Cedmod and custom plugins! (Read below)<br>[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ColoredNames/total.svg)]()</sub></div>
+# <div align="center">ColoredNames<br><sub> A simple plugin to allow users to have colored names with no badge text, Also uses a database for storing data. Supports Cedmod and custom plugins! (Read below)<br>[![Github All Releases](https://img.shields.io/github/downloads/DentyTxR/ColoredNames/total.svg)]()</sub></div>
 
 ## NOTE: This plugin relies on EXILED permissions! The player/group NEEDS to have `colorednames.access` otherwise the plugin will not give the user a colored name when joining the server and cannot access commands.
 
