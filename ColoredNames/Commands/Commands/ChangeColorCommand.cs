@@ -1,9 +1,11 @@
 ﻿using ColoredNames.Features;
+using ColoredNames.Features.Components;
 using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
 using System;
 using System.Linq;
+using UnityEngine;
 
 namespace ColoredNames.Commands.Commands
 {
@@ -51,6 +53,9 @@ namespace ColoredNames.Commands.Commands
 
             if (player.RankName.IsEmpty() || player.RankName == " " || user.OverrideBadge)
             {
+                if (player.GameObject.TryGetComponent(out RainbowBadgeComponent component))
+                    UnityEngine.Object.Destroy(component);
+
                 player.RankColor = color;
                 player.RankName = " ";
             }
