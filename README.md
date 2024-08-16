@@ -45,6 +45,8 @@
 
 # <div align="center">FAQ</div>
 
+- "rainbow" is a vaild color, which will give the player a rainbow name that changes every 0.5 seconds (config for speed, also code from [this plugin](https://github.com/NotIntense/RainbowTags))
+
 - Data is saved at `/EXILED/Configs/ColoredNames/data.yml`
 
 - OverrideBadge works as follows:
