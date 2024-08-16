@@ -29,6 +29,8 @@ namespace ColoredNames.Commands.Commands
                 return true;
             }
 
+            Player player = Player.Get(sender);
+
             string color = arguments.At(0);
 
             if (!OtherMethods.IsValidColor(color))
@@ -36,8 +38,6 @@ namespace ColoredNames.Commands.Commands
                 response = "Invalid color. Please use the 'color' command to see allowed colors.";
                 return true;
             }
-
-            Player player = Player.Get(sender);
 
             if (!DatabaseMethods.UserExists(player.UserId))
             {

@@ -105,6 +105,7 @@
     <Compile Include="Commands\ParrentCommand.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="EventHandler.cs" />
+    <Compile Include="Features\Components\RainbowBadgeComponent.cs" />
     <Compile Include="Features\DatabaseMethods.cs" />
     <Compile Include="Features\OtherMethods.cs" />
     <Compile Include="Features\Data\UserData.cs" />

@@ -10,5 +10,8 @@ namespace ColoredNames
 
         [Description("Should debug logs be enabled?")]
         public bool Debug { get; set; } = false;
+
+        [Description("Rainbow color speed")]
+        public float RainbowBadgeInterval { get; set; } = 0.5f;
     }
 }

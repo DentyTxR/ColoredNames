@@ -28,7 +28,8 @@ namespace ColoredNames.Features
             "nickel",
             "mint",
             "army_green",
-            "pumpkin"
+            "pumpkin",
+            "rainbow"
         };
 
         public static string NoPermission(string c) => $"<color=white>You do not have permission required for this command,You need</color><color=red> {c}</color>";
