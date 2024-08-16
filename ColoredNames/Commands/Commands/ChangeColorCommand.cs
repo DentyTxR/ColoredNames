@@ -3,6 +3,7 @@ using ColoredNames.Features.Components;
 using CommandSystem;
 using Exiled.API.Features;
 using Exiled.Permissions.Extensions;
+using PluginAPI.Events;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -56,7 +57,10 @@ namespace ColoredNames.Commands.Commands
                 if (player.GameObject.TryGetComponent(out RainbowBadgeComponent component))
                     UnityEngine.Object.Destroy(component);
 
-                player.RankColor = color;
+                if (color == "rainbow")
+                    player.GameObject.AddComponent<RainbowBadgeComponent>().Interval = Plugin.Singleton.Config.RainbowBadgeInterval;
+                else
+                    player.RankColor = color;
                 player.RankName = " ";
             }
 
